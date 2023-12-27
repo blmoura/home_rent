@@ -17,6 +17,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void onSelectedHouse(House house) {
+      Navigator.pushNamed(context, '/detail', arguments: house);
+    }
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -91,7 +95,6 @@ class HomeScreen extends StatelessWidget {
                 // Section NEAR FROM YOU
                 const TitleWidget(title: 'Near from you'),
                 const SizedBox(height: 24),
-                // const SectionNearFromYouWidget(),
                 SizedBox(
                   height: 275,
                   child: ListView.builder(
@@ -99,6 +102,8 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return SectionNearFromYouWidget(
                         house: housesSectionNearFromYou[index],
+                        onSelectedHouse: () =>
+                            onSelectedHouse(housesSectionNearFromYou[index]),
                       );
                     },
                     itemCount: housesSectionNearFromYou.length,

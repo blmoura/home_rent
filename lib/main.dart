@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:home_rent/screens/detail_screen.dart';
 import 'package:home_rent/screens/home_screen.dart';
 
 void main() {
@@ -17,8 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: GoogleFonts.raleway().fontFamily,
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/detail': (context) => const DetailScreen()
+      },
     );
   }
 }
