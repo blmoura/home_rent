@@ -20,14 +20,17 @@ class SectionNearFromYouWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: Stack(
           children: [
-            Container(
-              width: 222,
-              height: 272,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                  image: ExactAssetImage(house.assetImage),
-                  fit: BoxFit.fitHeight,
+            Hero(
+              tag: house.title,
+              child: Container(
+                width: 222,
+                height: 272,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: ExactAssetImage(house.assetImage),
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
             ),
